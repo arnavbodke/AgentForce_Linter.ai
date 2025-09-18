@@ -12,7 +12,7 @@ load_dotenv()
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 ANALYSIS_AUTH_TOKEN = os.getenv("GEMINI_API_KEY")
 GITLAB_TOKEN = os.getenv("GITLAB_TOKEN")
-ANALYSIS_ENGINE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent"
+ANALYSIS_ENGINE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent"
 GITLAB_API_URL = "https://gitlab.com/api/v4"
 REVIEWS_FILE = "reviews.json"
 
