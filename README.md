@@ -11,7 +11,7 @@ The feedback is always practical, it tells you how severe each issue is, explain
 
 The application is deployed and publicly accessible on Streamlit Community Cloud.
 
-**[Click here to access the live application](https://agentforcearnav-linter-ai.streamlit.app/)**
+**[Click here to access the live application](https://agentforcelinterai.streamlit.app/)**
 
 Open the link to start. No installation is required.
 
