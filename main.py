@@ -108,21 +108,21 @@ def call_ai_engine(prompt, expect_json):
             st.error("AI Response Error.")
             return None
     except (requests.exceptions.RequestException, KeyError, json.JSONDecodeError) as e:
-    error_message = str(e)
-    if ANALYSIS_AUTH_TOKEN:
-        error_message = error_message.replace(ANALYSIS_AUTH_TOKEN, "[REDACTED_API_KEY]")
-    
-    st.error(f"AI Engine Call Failed: {error_message}")
-    
-    response_text = ""
-    if 'response' in locals() and hasattr(response, 'text'):
-        response_text = response.text
+        error_message = str(e)
         if ANALYSIS_AUTH_TOKEN:
-             response_text = response_text.replace(ANALYSIS_AUTH_TOKEN, "[REDACTED_API_KEY]")
-    
-    if response_text:
-        st.error(f"Response content: {response_text}")
-    return None
+            error_message = error_message.replace(ANALYSIS_AUTH_TOKEN, "[REDACTED_API_KEY]")
+        
+        st.error(f"AI Engine Call Failed: {error_message}")
+        
+        response_text = ""
+        if 'response' in locals() and hasattr(response, 'text'):
+            response_text = response.text
+            if ANALYSIS_AUTH_TOKEN:
+                 response_text = response_text.replace(ANALYSIS_AUTH_TOKEN, "[REDACTED_API_KEY]")
+        
+        if response_text:
+            st.error(f"Response content: {response_text}")
+        return None
 
 def generate_quick_review(pr_title, pr_body, code_to_review):
     prompt = f"""You are an expert software engineer performing a code review. Analyze the following code and provide your feedback in a structured JSON format.
